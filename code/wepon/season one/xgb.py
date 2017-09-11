@@ -2,12 +2,14 @@ import pandas as pd
 import xgboost as xgb
 from sklearn.preprocessing import MinMaxScaler
 
+#读入数据
 dataset1 = pd.read_csv('data/dataset1.csv')
 dataset1.label.replace(-1,0,inplace=True)
 dataset2 = pd.read_csv('data/dataset2.csv')
 dataset2.label.replace(-1,0,inplace=True)
 dataset3 = pd.read_csv('data/dataset3.csv')
 
+#去重
 dataset1.drop_duplicates(inplace=True)
 dataset2.drop_duplicates(inplace=True)
 dataset3.drop_duplicates(inplace=True)
